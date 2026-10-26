@@ -1,0 +1,255 @@
+:root {
+  --text: #374151;
+  --text-h: #111827;
+  --bg: #ffffff;
+  --border: #e5e7eb;
+  --code-bg: #f3f4f6;
+  --accent: #0f5132;
+  --accent-bg: rgba(15, 81, 50, 0.1);
+  --accent-border: #0f5132;
+  --shadow: rgba(0, 0, 0, 0.05) 0 4px 6px -1px;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/145% var(--sans);
+  color: var(--text);
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background-color: #f9fafb;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Header Styling (Dark Green Theme matching lab sheet) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: #0f5132;
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+button.link {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+button.link.cart {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge {
+  background: #111827;
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  text-align: left;
+  flex: 1;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 1rem;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Cart & Checkout Two-Column Layout */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cart-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-line {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-name {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin: 0.2rem 0 0;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qty button {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.line-total {
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+button.link.danger {
+  color: #b3261e;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 1.5rem 0 0;
+}
+
+/* Checkout Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  color: var(--text-h);
+}
+
+.form label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  color: var(--text-h);
+}
+
+.form input,
+.form select {
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field-error {
+  color: #b3261e;
+  font-size: 0.8rem;
+  margin: 0.2rem 0 0;
+}
+
+.btn {
+  background: #0f5132;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background: #146c43;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+  margin-top: auto;
+}
