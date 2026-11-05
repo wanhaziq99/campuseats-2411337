@@ -3,7 +3,7 @@ import { useCart } from "../hooks/useCart.js";
 export default function OrdersPage() {
   const { orders } = useCart();
 
-  if (orders.length === 0) {
+  if (!orders || orders.length === 0) {
     return <p className="muted">No orders placed yet.</p>;
   }
 
@@ -29,6 +29,38 @@ export default function OrdersPage() {
             <p>
               <strong>Date:</strong> {order.date}
             </p>
+
+            <div
+              style={{
+                margin: "1rem 0",
+                padding: "0.5rem",
+                background: "#f9f9f9",
+                borderRadius: "4px",
+              }}
+            >
+              <strong>Items Ordered:</strong>
+              <ul>
+                {order.items.map((line, idx) => (
+                  <li key={idx}>
+                    {line.qty}x {line.item.name} — RM{" "}
+                    {(line.item.price * line.qty).toFixed(2)}
+                    {line.note && (
+                      <span
+                        style={{
+                          display: "block",
+                          color: "#555",
+                          fontStyle: "italic",
+                          fontSize: "0.85rem",
+                        }}
+                      >
+                        Note: {line.note}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <p className="cart-total">
               Total Paid: RM {order.total.toFixed(2)}
             </p>
