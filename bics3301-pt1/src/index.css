@@ -1,0 +1,31 @@
+/* Styles for the whole test. Provided for you: you do not need to write CSS.
+   Class names you can use: card, card selected, card-grid, summary, detail, muted, badge, error, error-box, field, form, row, pill. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #f6f4ee; color: #16302c; }
+a { color: #00685e; }
+h1 { font-size: 1.6rem; margin: 0 0 .5rem; }
+h2 { font-size: 1.25rem; margin: 1.25rem 0 .5rem; }
+.container { max-width: 960px; margin: 0 auto; padding: 1.25rem; }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: .75rem 1.25rem; background: #16302c; }
+.topbar a { color: #f6f4ee; text-decoration: none; margin-left: 1rem; }
+.topbar .brand { margin-left: 0; font-weight: 700; }
+.nav a.active { text-decoration: underline; }
+.muted { color: #4a5654; }
+.home-list li { margin: .5rem 0; }
+.summary { font-weight: 600; margin: .5rem 0 1rem; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; list-style: none; padding: 0; }
+.card { background: #fff; border: 1px solid #ddd8cb; border-radius: 10px; padding: 1rem; }
+.card h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
+.card p { margin: .25rem 0; }
+.card.selected { border-color: #00685e; background: #e3f2ec; }
+.pill { display: inline-block; font-size: .8rem; padding: .1rem .5rem; border-radius: 999px; background: #e6edf5; color: #2e4e73; }
+button { font: inherit; padding: .4rem .8rem; border-radius: 6px; border: 1px solid #00685e; background: #00685e; color: #fff; cursor: pointer; }
+button.secondary { background: #fff; color: #00685e; }
+.form { background: #fff; border: 1px solid #ddd8cb; border-radius: 10px; padding: 1rem; display: grid; gap: .75rem; max-width: 420px; }
+.field { display: grid; gap: .25rem; }
+.field input, .field select { font: inherit; padding: .4rem; border: 1px solid #c5cbd3; border-radius: 6px; }
+.error { color: #8a3414; font-size: .9rem; margin: 0; }
+.error-box { background: #fbe6dd; border: 1px solid #8a3414; border-radius: 8px; padding: .75rem; }
+.row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin: .75rem 0; }
+.badge { display: inline-block; min-width: 1.5rem; text-align: center; padding: 0 .4rem; border-radius: 999px; background: #7a4d0b; color: #fff; font-size: .85rem; }
+.detail { background: #fff; border: 1px solid #ddd8cb; border-radius: 10px; padding: 1.25rem; max-width: 560px; }
